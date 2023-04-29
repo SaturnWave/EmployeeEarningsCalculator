@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylessheet" href="styles.css">
+    <title>Profile</title>
+</head>
+<body>
+    <h1>Employee Profile</h1>
+
+    <div>
+        <strong>Name:</strong> <span id="profileName"></span>
+    </div>
+    <div>
+    <strong>Date Of Birth</strong> <span id="profileDob"></span>
+    </div>
+    <div>
+
+        <strong> User ID:</strong> <span id="profileID"></span>
+    </div>
+    <div>
+        <strong>Password:</strong> <span id="profilePassword"></span>
+    </div>
+    
+    <button onclick="logout()">Logout</button>
+    <script src="employee-calculator.js"></script>
+    <script>
+        function loadProfile(){
+            const loggedInEMployee= JSON.parse(localStorage.getItem('loggenInEmployee'));
+            if(!loggedInEMployee){
+                window.location.href='login.html';
+            }else{
+                document.getElementById('profileName').textContent=loggedInEmployee.name;
+                document.getElementById('profileDob').textContent=loggedInEMployee.dob;
+                document.getElementById('profileId').textContent=loggedInEMployee.id;
+                document.getElementById('profilePassword').textContent=loggedInEMployee.password;
+
+            }
+        }
+        function logout(){
+            localStorage.removeItem('loggenInEmployee');
+            window.location.href = 'login.html';
+        }
+        loadProfile();
+    </script>
+
+</body>
+</html>

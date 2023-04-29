@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <script src="script.js" defer></script>
+    <script src="employee-calculator.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+    <div class="container">
+        <h1>Employee Calculator</h1>
+        <div class="form-group">
+            <label for="fullName">Full Name:</label>
+<input type="text" id="fullName" name="fullName" required>
+
+<label for="dateOfBirth">Date of Birth:</label>
+<input type="date" id="dateOfBirth" name="dateOfBirth" required>
+
+<label for="password">Password:</label>
+<input type="password" id="password" name="password" required>
+            <label for="employee-type">Employee Type:</label>
+            <select id="employee-type" onchange="updateAdditionalInfo()">
+                <option value="1">Commission Employee</option>
+                <option value="2">Salaried Employee</option>
+                <option value="3">Hourly Employee</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="employee-name">Employee Name:</label>
+            <input type="text" id="employee-name" placeholder="Enter Employee Name">
+        </div>
+        <div class="form-group">
+            <label for="employee-id">Employee ID:</label>
+            <input type="text" id="employee-id" placeholder="Enter Employee ID">
+        </div>
+        <div class="form-group" id="employee-info-container">
+            <label for="employee-info">Commission Sales:</label>
+            <input type="number" id="employee-info" placeholder="Enter Commission Sales">
+        </div>
+        <button onclick="calculateEarnings()">Calculate Earnings</button>
+        <div id="result"></div>
+        <button onclick="displayEmployees()">Display Employees</button>
+        <div id="display-employees"></div>
+    </div>
+
+
+</body>
+</html>
+
